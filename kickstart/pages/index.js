@@ -42,6 +42,8 @@ const CampaignIndex = (props) => {
   );
 };
 
+//This is a old way of using the initial props in nextJS new way
+//is to use either getStaticProps (pre-rendering) or getServerSideProps(when the user requests)
 CampaignIndex.getInitialProps = async ({ req, res, match, store, ...ctx }) => {
   const campaigns = await factory.methods.getDeployedCampaigns().call();
   return { campaigns };
