@@ -25,6 +25,8 @@ const NewCampaign = () => {
       const accounts = await web3.eth.getAccounts();
       await factory.methods.createCampaign(minimumContribution).send({
         from: accounts[0],
+        gas: "1000000",
+        type: "0x2",
       });
       router.push("/");
     } catch (error) {
